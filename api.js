@@ -1,4 +1,4 @@
-const key = '6b902b36afa59181bcc5b5365a556d1a'
+const key = ''
 let lat = ''
 let lon = ''
 let city = ''
