@@ -1,0 +1,15 @@
+body {
+    padding: 1em;
+    background-color: rgba(0, 0, 0, 0.185);
+}
+
+.main {
+    max-width: 460px;
+    max-height: 800px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.changing-video {
+    max-height: 800px;
+}
