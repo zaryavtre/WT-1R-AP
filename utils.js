@@ -7,7 +7,6 @@ function baseApp() {
 
     const videoBG = document.createElement('video')
     videoBG.classList.add('changing-video')
-    videoBG.setAttribute('controls', '')
     videoBG.setAttribute('autoplay', '')
     videoBG.setAttribute('mute', '')
     videoBG.setAttribute('loop', '')
@@ -32,10 +31,18 @@ function weatherDetails() {
 
     const weatherCity = document.createElement('h2')
     weatherCity.classList.add('heading-medium')
+    weatherCity.setAttribute('id', 'city')
     const weatherTemp = document.createElement('h1')
     weatherTemp.classList.add('heading-large')
+    weatherTemp.setAttribute('id', 'temp')
     const weatherDetail = document.createElement('p')
     weatherDetail.classList.add('paragraph-custom-1')
+    weatherDetail.setAttribute('id', 'weather-detail')
+    weatherWrapper.appendChild(weatherTemp)
+    weatherWrapper.appendChild(weatherCity)
+    weatherWrapper.appendChild(weatherDetail)
+
+    return weatherWrapper
 }
 
 export {baseApp, weatherDetails}
