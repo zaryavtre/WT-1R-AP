@@ -1,9 +1,9 @@
-const key = '6b902b36afa59181bcc5b5365a556d1a'
-let lat = ''
-let lon = ''
-let city = ''
-const weatherAPI = `http://api.openweathermap.org/data/2.5/forecast?id=524901&appid=${key}`
-const currentWeather = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}`
-const searchCity = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit={5}&appid=${key}`
-
-export {weatherAPI, currentWeather}
+const key = ''
+let lat = '39.7436'
+let lon = '-8.8071'
+let city = 'Leiria'
+const weatherAPI = `https://api.openweathermap.org/data/2.5/forecast/daily?lat=${lat}&lon=${lon}&cnt=7&appid=${key}`
+const currentWeatherAPI = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${key}`
+const searchCity = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit={5}&appid=${key}`
+const forecastWeather = `https://api.weatherapi.com/v1/forecast.json?key=${key}&q=${city}&days=5&aqi=no&alerts=no`
+export { forecastWeather }
