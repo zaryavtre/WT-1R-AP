@@ -1,31 +1,34 @@
 import { baseApp, weatherDetails } from "./utils.js"
-import { currentWeather, searchCity } from "./api.js"
+import { forecastWeather } from "./api.js"
 
 const main = document.querySelector('.main')
 const baseHTML = baseApp()
 const weatherBase = weatherDetails()
 
 document.addEventListener('DOMContentLoaded', () => {
-    fetchTemp();
-    
-});
+    fetchTemp()
+})
 
 const fetchTemp = () => {
-    fetch(currentWeather)
+    fetch(forecastWeather)
     .then(response => response.json())
     .then(data => {
         console.log(data)
-        const temperature = data.main.temp
-        const city = data.name
-        const wholeTemp = Math.trunc(temperature)
-        const weatherDetail = data.weather[0].description
+        const temperature = data.current.temp_c
+        const city = data.location.name
+        const weatherDetail = data.current.condition.text
+        const weatherMax = Math.trunc(data.forecast.forecastday[0].day.maxtemp_c)
+        const weatherMin = Math.trunc(data.forecast.forecastday[0].day.mintemp_c)
         const getTempHtml = document.querySelector('#temp')
         const getCityHtml = document.querySelector('#city')
         const getDetailHtml = document.querySelector('#weather-detail')
-        console.log(weatherDetail)
-        getTempHtml.innerHTML = `${parseInt(wholeTemp)}º`
+        const getMaxHtml = document.querySelector('#temp-max')
+        const getMinHtml = document.querySelector('#temp-min')
+        getTempHtml.innerHTML = `${parseInt(temperature)}º`
         getCityHtml.innerHTML = city
         getDetailHtml.innerHTML = weatherDetail
+        getMaxHtml.innerHTML = `H: ${weatherMax}`
+        getMinHtml.innerHTML = `L: ${weatherMin}`
     })
     .catch( error => {
         console.log('error fetching weather', error)

@@ -38,11 +38,28 @@ function weatherDetails() {
     const weatherDetail = document.createElement('p')
     weatherDetail.classList.add('paragraph-custom-1')
     weatherDetail.setAttribute('id', 'weather-detail')
-    weatherWrapper.appendChild(weatherTemp)
-    weatherWrapper.appendChild(weatherCity)
-    weatherWrapper.appendChild(weatherDetail)
+    const tempMinMax = document.createElement('div')
+    tempMinMax.classList.add('min-max-wrapper')
+    const tempMax = document.createElement('p')
+    tempMax.setAttribute('id', 'temp-max')
+    tempMax.classList.add('paragraph-custom-1')
+    const tempMin = document.createElement('p')
+    tempMin.setAttribute('id', 'temp-min')
+    tempMin.classList.add('paragraph-custom-1')
+    weatherWrapper.append(
+        weatherTemp, 
+        weatherCity, 
+        weatherDetail, 
+        tempMinMax
+        )
+    tempMinMax.append(tempMax, tempMin)
 
     return weatherWrapper
 }
 
-export {baseApp, weatherDetails}
+function bottomBar() {
+    const mainBar = document.createElement('div')
+    mainBar.setAttribute('id', 'bottom-bar')
+    mainBar.classList.add('main-bar')
+}
+export {baseApp, weatherDetails, bottomBar}

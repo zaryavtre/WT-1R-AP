@@ -57,7 +57,13 @@ body {
 
 .paragraph-custom-1 {
     color: white;
-    font-size: 1.5em;
+    font-size: 1.2em;
     font-family: var(--main-text);
     margin: 0;
+}
+
+.min-max-wrapper {
+    display: flex;
+    gap: 1em;
+    margin-top: 0.2em;
 }
