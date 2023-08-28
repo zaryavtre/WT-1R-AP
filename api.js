@@ -1,9 +1,16 @@
 const key = ''
 let lat = '39.7436'
 let lon = '-8.8071'
-let city = 'Leiria'
-const weatherAPI = `https://api.openweathermap.org/data/2.5/forecast/daily?lat=${lat}&lon=${lon}&cnt=7&appid=${key}`
-const currentWeatherAPI = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${key}`
-const searchCity = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit={5}&appid=${key}`
-const forecastWeather = `https://api.weatherapi.com/v1/forecast.json?key=${key}&q=${city}&days=5&aqi=no&alerts=no`
+let currentCity = 'Leiria'
+let forecastWeather = `https://api.weatherapi.com/v1/forecast.json?key=${key}&q=${currentCity}&days=5&aqi=no&alerts=no`
+
+export const updateCity = (newCity) => {
+    currentCity = newCity
+    forecastWeather = `https://api.weatherapi.com/v1/forecast.json?key=${key}&q=${currentCity}&days=5&aqi=no&alerts=no`
+}
+
 export { forecastWeather }
+export const apiData = {
+    currentCity
+}
+

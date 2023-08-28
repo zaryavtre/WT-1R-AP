@@ -67,3 +67,85 @@ body {
     gap: 1em;
     margin-top: 0.2em;
 }
+
+.main-bar {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 1.5em 10px 1.5em;
+    box-sizing: border-box;
+    background-color: rgba(48, 34, 12, 0.231);
+    backdrop-filter: blur(60px);
+    border-top: 1px solid rgba(255, 255, 255, 0.267);
+}
+
+.hamburguer-btn {
+    display: flex;
+    flex-direction: column;
+    padding: 1px;
+    gap: 3px;
+    background-color: transparent;
+    width: 25px;
+    height: 20px;
+    outline: none;
+    border: none;
+    justify-content: space-between;
+    align-items: stretch;
+    align-content: center;
+    cursor: pointer;
+}
+
+.burguer-width {
+    width: 25px;
+    height: 2px;
+    background-color: white;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 2;
+    background-color: rgba(10, 9, 50, 0.466);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+}
+
+.base-modal {
+    border-radius: 1em;
+    background-color: white;
+    padding: 2em;
+}
+
+.search-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2em;
+}
+
+#search-modal-heading {
+    font-size: 1.8em;
+    color: rgb(60, 60, 60);
+    margin-bottom: 0.3em;
+}
+
+.search-input {
+    border-radius: 0.5em;
+    border: 1px solid gray;
+    padding: 0.5em;
+}
+
+.submit-btn {
+    background-color:rgba(10, 9, 50, 0.466);
+    padding: 0.5em 0 0.5em 0;
+    border: none;
+    border-radius: 0.5em;
+}

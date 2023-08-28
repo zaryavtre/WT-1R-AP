@@ -61,5 +61,47 @@ function bottomBar() {
     const mainBar = document.createElement('div')
     mainBar.setAttribute('id', 'bottom-bar')
     mainBar.classList.add('main-bar')
+
+    const hamburguerBtn = document.createElement('button')
+    hamburguerBtn.classList.add('hamburguer-btn')
+    const hamburguerBar1 = document.createElement('div')
+    hamburguerBar1.classList.add('burguer-width')
+    const hamburguerBar2 = document.createElement('div')
+    hamburguerBar2.classList.add('burguer-width')
+    const hamburguerBar3 = document.createElement('div')
+    hamburguerBar3.classList.add('burguer-width')
+
+    hamburguerBtn.append(hamburguerBar1, hamburguerBar2, hamburguerBar3)
+    mainBar.append(hamburguerBtn)
+    return mainBar
 }
-export {baseApp, weatherDetails, bottomBar}
+
+function weatherModal() {
+    const overlay = document.createElement('div')
+    overlay.classList.add('overlay')
+
+    const baseModal = document.createElement('div')
+    baseModal.classList.add('base-modal')
+    const modalHeading = document.createElement('h2')
+    modalHeading.classList.add('heading-medium')
+    modalHeading.setAttribute('id', 'search-modal-heading')
+
+    const cityFormSearch = document.createElement('div')
+    cityFormSearch.classList.add('search-form')
+    const cityInput = document.createElement('input')
+    cityInput.classList.add('search-input')
+    cityInput.setAttribute('placeholder', 'Search for a City')
+    const submitBtn = document.createElement('button')
+    submitBtn.setAttribute('type', 'submit')
+    submitBtn.dataset.formbtn = 'btn-submit'
+    submitBtn.classList.add('submit-btn')
+    submitBtn.textContent = 'Search'
+    const errorDiv = document.createElement('div')
+    errorDiv.classList.add('error-div')
+    cityFormSearch.append(cityInput, errorDiv, submitBtn)
+    baseModal.append(modalHeading, cityFormSearch)
+    overlay.append(baseModal)
+
+    return overlay
+}
+export {baseApp, weatherDetails, bottomBar, weatherModal}
