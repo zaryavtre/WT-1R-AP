@@ -46,15 +46,37 @@ function weatherDetails() {
     const tempMin = document.createElement('p')
     tempMin.setAttribute('id', 'temp-min')
     tempMin.classList.add('paragraph-custom-1')
+
+    const forecastBase = document.createElement('div')
+    forecastBase.classList.add('forecast-base')
+
+    forecastBase.append(
+        forecastDetails()
+    )
+
     weatherWrapper.append(
         weatherTemp, 
         weatherCity, 
         weatherDetail, 
-        tempMinMax
+        tempMinMax,
+        forecastBase
         )
     tempMinMax.append(tempMax, tempMin)
 
     return weatherWrapper
+}
+
+function forecastDetails() {
+    const dayForecastWrapper = document.createElement('div')
+    const forecastHeading = document.createElement('h1')
+    forecastHeading.classList.add('paragraph-custom-1')
+    forecastHeading.textContent = '7-Day Forecast'
+
+    dayForecastWrapper.append(
+        forecastHeading
+    )
+
+    return dayForecastWrapper
 }
 
 function bottomBar() {

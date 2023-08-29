@@ -149,3 +149,20 @@ body {
     border: none;
     border-radius: 0.5em;
 }
+
+.error-div {
+    font-family: var(--main-text);
+    color: red;
+    font-size: 1em;
+}
+
+.forecast-base {
+    margin: 1em 0 1em 0;
+    background-color: rgba(255, 255, 255, 0.128);
+    height: 125px;
+    width: 100%;
+    backdrop-filter: blur(5px);
+    border-radius: 1em;
+    padding: 1em;
+    box-sizing: border-box;
+}
