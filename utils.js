@@ -51,7 +51,7 @@ function weatherDetails() {
     forecastBase.classList.add('forecast-base')
 
     forecastBase.append(
-        forecastDetails()
+        dayForecastCard()
     )
 
     weatherWrapper.append(
@@ -66,14 +66,27 @@ function weatherDetails() {
     return weatherWrapper
 }
 
-function forecastDetails() {
+function dayForecastCard() {
     const dayForecastWrapper = document.createElement('div')
+    dayForecastWrapper.classList.add('day-wrapper')
     const forecastHeading = document.createElement('h1')
     forecastHeading.classList.add('paragraph-custom-1')
-    forecastHeading.textContent = '7-Day Forecast'
+    forecastHeading.setAttribute('id', 'todayforecast')
+    forecastHeading.textContent = 'Forecast For Today'
+
+    const dayHoursWrapper = document.createElement('div')
+    dayHoursWrapper.classList.add('day-hours-wrapper')
+
+    const dayForecastElement = document.createElement('div')
+    dayForecastElement.classList.add('day-forecast')
+
+    dayHoursWrapper.append(
+        dayForecastElement
+    )
 
     dayForecastWrapper.append(
-        forecastHeading
+        forecastHeading,
+        dayHoursWrapper
     )
 
     return dayForecastWrapper

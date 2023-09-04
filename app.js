@@ -45,21 +45,25 @@ const fetchTemp = (currentCity) => {
             })
             .then((data) => {
                 console.log(data)
-                let temperature = data.current.temp_c
-                let city = data.location.name
-                let weatherDetail = data.current.condition.text
-                let weatherMax = Math.trunc(data.forecast.forecastday[0].day.maxtemp_c)
-                let weatherMin = Math.trunc(data.forecast.forecastday[0].day.mintemp_c)
-                let getTempHtml = document.querySelector('#temp')
-                let getCityHtml = document.querySelector('#city')
-                let getDetailHtml = document.querySelector('#weather-detail')
-                let getMaxHtml = document.querySelector('#temp-max')
-                let getMinHtml = document.querySelector('#temp-min')
+                const temperature = data.current.temp_c
+                const city = data.location.name
+                const weatherDetail = data.current.condition.text
+                const weatherMax = Math.trunc(data.forecast.forecastday[0].day.maxtemp_c)
+                const weatherMin = Math.trunc(data.forecast.forecastday[0].day.mintemp_c)
+                const getTempHtml = document.querySelector('#temp')
+                const getCityHtml = document.querySelector('#city')
+                const getDetailHtml = document.querySelector('#weather-detail')
+                const getMaxHtml = document.querySelector('#temp-max')
+                const getMinHtml = document.querySelector('#temp-min')
                 getTempHtml.textContent = `${parseInt(temperature)}º`
                 getCityHtml.textContent = city
                 getDetailHtml.textContent = weatherDetail
                 getMaxHtml.textContent = `H: ${weatherMax}`
                 getMinHtml.textContent = `L: ${weatherMin}`
+                const getForecastElementHtml = document.querySelector('.day-forecast')
+                //console.log(data.forecast.forecastday[0].hour)
+                let getHoursDayArr = data.forecast.forecastday[0].hour
+                
                 resolve()
     })
     .catch((error) => {
