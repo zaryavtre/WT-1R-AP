@@ -5,12 +5,11 @@ let currentCity = 'Leiria'
 let forecastWeather = `https://api.weatherapi.com/v1/forecast.json?key=${key}&q=${currentCity}&days=5&aqi=no&alerts=no`
 
 export const updateCity = (newCity) => {
-    currentCity = newCity
-    forecastWeather = `https://api.weatherapi.com/v1/forecast.json?key=${key}&q=${currentCity}&days=5&aqi=no&alerts=no`
+  currentCity = newCity
+  forecastWeather = `https://api.weatherapi.com/v1/forecast.json?key=${key}&q=${currentCity}&days=5&aqi=no&alerts=no`
 }
 
 export { forecastWeather }
 export const apiData = {
-    currentCity
+  currentCity,
 }
-
