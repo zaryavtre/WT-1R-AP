@@ -59,11 +59,17 @@ function dayTemps(data) {
   const getTempHour = Math.trunc(data.forecast.forecastday[0].hour.temp_c)
   const getForecastElementHtml = document.querySelector('.day-hours-wrapper')
   for (let i = 0; i < getHoursDayArr.length; i++) {
+    const template = `<div class="day-forecast"></div>`
+    getForecastElementHtml.innerHTML += template
+    for (const getTimeDay of getHoursDayArr) {
+      const splitTime = getTimeDay.time.split(' ')
+      const time = splitTime[1]
+      const setHtmlHourDay = `<p>${time}</p>`
+      template.innerHTML += setHtmlHourDay
+    }
     for (const getTempC of getHoursDayArr) {
-      const setHtmlDayForecast = `<div class="day-forecast"><p>${parseInt(
-        getTempC.temp_c
-      )}</p></div>`
-      getForecastElementHtml.innerHTML += setHtmlDayForecast
+      const setHtmlTempForecast = `<p>${parseInt(getTempC.temp_c)}º</p>`
+      //getForecastElementHtml.innerHTML += setHtmlTempForecast
     }
   }
 }

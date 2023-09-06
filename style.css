@@ -165,12 +165,32 @@ body {
   border-radius: 1em;
   padding: 1em;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 #todayforecast {
   font-size: 1em;
 }
 
+.day-hours-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  overflow-x: scroll;
+}
+
+::-webkit-scrollbar {
+  height: 5px;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(1 2 3 / 40%);
+  border-radius: 8px;
+}
+
 .day-forecast {
+  font-family: var(--main-text);
+  font-weight: 600;
   color: white;
 }
