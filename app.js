@@ -56,20 +56,23 @@ function currentTemp(data) {
 
 function dayTemps(data) {
   let getHoursDayArr = data.forecast.forecastday[0].hour
-  const getTempHour = Math.trunc(data.forecast.forecastday[0].hour.temp_c)
   const getForecastElementHtml = document.querySelector('.day-hours-wrapper')
-
-    for (const getTimeDay of getHoursDayArr) {
-        const template = document.createElement('div')
-        getForecastElementHtml.append(template)
-        const splitTime = getTimeDay.time.split(' ')
-        const time = splitTime[1]
-        const setHtmlHourDay = `<p>${time}</p>`
-        template.innerHTML += setHtmlHourDay
-        const setHtmlTempForecast = `<p>${parseInt(getTimeDay.temp_c)}º</p>`
-        template.innerHTML += setHtmlTempForecast
-    }
-
+  getForecastElementHtml.innerHTML = ''
+  for (const getTimeDay of getHoursDayArr) {
+    const template = document.createElement('div')
+    getForecastElementHtml.append(template)
+    const splitTime = getTimeDay.time.split(' ')
+    const time = splitTime[1]
+    const newSplit = time.split(':')
+    const finalTime = newSplit[0]
+    const setHtmlHourDay = `<p>${finalTime}</p>`
+    template.innerHTML += setHtmlHourDay
+    const weatherIconDaily = getTimeDay.condition.icon
+    const setWeatherIconDaily = `<img class="image-weather" src="https:${weatherIconDaily}">`
+    template.innerHTML += setWeatherIconDaily
+    const setHtmlTempForecast = `<p>${parseInt(getTimeDay.temp_c)}º</p>`
+    template.innerHTML += setHtmlTempForecast
+  }
 }
 
 const fetchTemp = (currentCity) => {

@@ -159,12 +159,11 @@ body {
 .forecast-base {
   margin: 1em 0 1em 0;
   background-color: rgba(255, 255, 255, 0.128);
-  height: 125px;
+  height: 140px;
   width: 100%;
   backdrop-filter: blur(5px);
   border-radius: 1em;
   padding: 1em;
-  box-sizing: border-box;
   overflow: hidden;
 }
 
@@ -175,19 +174,31 @@ body {
 .day-hours-wrapper {
   display: flex;
   flex-direction: row;
-  gap: 10px;
+  gap: 17px;
   overflow-x: scroll;
+  padding: 0;
 }
 
 .day-hours-wrapper div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   font-family: var(--main-text);
   font-weight: 600;
   color: white;
+  padding: 0;
+}
+
+.image-weather {
+  height: 44px;
+  width: 44px;
+  margin: -10px 0 -15px 0;
 }
 
 ::-webkit-scrollbar {
-  height: 5px;
-  border-radius: 8px;
+  height: 8px;
+  border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb {
