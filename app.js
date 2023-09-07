@@ -58,20 +58,18 @@ function dayTemps(data) {
   let getHoursDayArr = data.forecast.forecastday[0].hour
   const getTempHour = Math.trunc(data.forecast.forecastday[0].hour.temp_c)
   const getForecastElementHtml = document.querySelector('.day-hours-wrapper')
-  for (let i = 0; i < getHoursDayArr.length; i++) {
-    const template = `<div class="day-forecast"></div>`
-    getForecastElementHtml.innerHTML += template
+
     for (const getTimeDay of getHoursDayArr) {
-      const splitTime = getTimeDay.time.split(' ')
-      const time = splitTime[1]
-      const setHtmlHourDay = `<p>${time}</p>`
-      template.innerHTML += setHtmlHourDay
+        const template = document.createElement('div')
+        getForecastElementHtml.append(template)
+        const splitTime = getTimeDay.time.split(' ')
+        const time = splitTime[1]
+        const setHtmlHourDay = `<p>${time}</p>`
+        template.innerHTML += setHtmlHourDay
+        const setHtmlTempForecast = `<p>${parseInt(getTimeDay.temp_c)}º</p>`
+        template.innerHTML += setHtmlTempForecast
     }
-    for (const getTempC of getHoursDayArr) {
-      const setHtmlTempForecast = `<p>${parseInt(getTempC.temp_c)}º</p>`
-      //getForecastElementHtml.innerHTML += setHtmlTempForecast
-    }
-  }
+
 }
 
 const fetchTemp = (currentCity) => {

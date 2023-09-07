@@ -179,6 +179,12 @@ body {
   overflow-x: scroll;
 }
 
+.day-hours-wrapper div {
+  font-family: var(--main-text);
+  font-weight: 600;
+  color: white;
+}
+
 ::-webkit-scrollbar {
   height: 5px;
   border-radius: 8px;
@@ -187,10 +193,4 @@ body {
 ::-webkit-scrollbar-thumb {
   background-color: rgb(1 2 3 / 40%);
   border-radius: 8px;
-}
-
-.day-forecast {
-  font-family: var(--main-text);
-  font-weight: 600;
-  color: white;
 }
